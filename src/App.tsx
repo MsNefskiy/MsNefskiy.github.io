@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import createTheme from '@mui/material/styles/createTheme';
+import { Contacts } from './components/Contacts';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -20,6 +21,7 @@ function App() {
         <Header />
         <Hero />
         <Skills />
+        <Contacts />
         <Footer />
       </ThemeProvider>
     </>

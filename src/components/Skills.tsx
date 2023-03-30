@@ -15,12 +15,6 @@ export function Skills() {
     textAlign: 'center',
   }));
 
-  const StackBox = styled(Box)(({ theme }) => ({
-    marginLeft: '1.5rem',
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'space-around',
-  }));
   return (
     <Container>
       <CustomBox sx={{ my: 5, padding: 2 }}>
@@ -49,16 +43,6 @@ export function Skills() {
               ))}
           </Stack>
         </Box>
-
-        {/* <Box sx={{ flex: 1 }}>
-        <Typography variant="h4" sx={{ color: 'white', textAlign: 'center', mb: 3 }}>
-          Versatility is key
-        </Typography>
-
-        <Typography variant="h4" sx={{ color: 'white', textAlign: 'center' }}>
-          Here's what I can help you with
-        </Typography>
-      </Box> */}
       </CustomBox>
     </Container>
   );
