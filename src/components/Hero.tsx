@@ -3,20 +3,9 @@ import { Box, Button, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper/Paper';
 import SpaceImg from '../assets/img/space.jpg';
 import { Colors } from '../theme';
+import { ButtonGitHub } from './ButtonGitHub';
 
 export function Hero() {
-  const CustomButton = styled(Button)(({ theme }) => ({
-    border: '3px solid transparent',
-    backgroundColor: Colors['--light-cyan'],
-    color: 'white',
-    width: '20%',
-    borderRadius: '25px',
-    '&:hover': {
-      border: '3px solid white',
-      backgroundColor: 'transparent',
-    },
-  }));
-
   const CustomPaper = styled(Paper)(({ theme }) => ({
     padding: '40px 0',
     minHeight: 695,
@@ -62,7 +51,7 @@ export function Hero() {
           </Typography>
         </Box>
 
-        <CustomButton>View Github Profile</CustomButton>
+        <ButtonGitHub link='https://github.com/MsNefskiy' text={'View GitHub Profile'.toUpperCase()}/>
       </Box>
     </CustomPaper>
   );
