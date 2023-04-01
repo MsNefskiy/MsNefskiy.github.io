@@ -15,17 +15,23 @@ export function Skills() {
     textAlign: 'center',
   }));
 
+  const Divider = styled('div')(({theme}) => ({
+    height: '5px',
+    backgroundColor: '#00C7FF',
+    borderRadius: '25px',
+  }))
+
   return (
-    <Container>
+    <Container id='skills'>
       <CustomBox sx={{ my: 5, padding: 2 }}>
-        <Typography variant="h1" sx={{ color: 'rgba(0,199,255,255)' }}>
+        <Typography variant="h1" color='primary'>
           Skills
         </Typography>
 
         <Box sx={{ mt: '50px' }}>
           <Typography variant="h2">Frontend</Typography>
 
-          <Stack direction="row" spacing={2} sx={{ mt: '20px' }}>
+          <Stack direction="row" spacing={4} sx={{ mt: '25px' }}>
             {frontendIcons &&
               frontendIcons.map((icon) => (
                 <Icon key={icon.id} name={icon.name} src={icon.src} />
@@ -36,7 +42,7 @@ export function Skills() {
         <Box sx={{ mt: '50px' }}>
           <Typography variant="h2">Backend</Typography>
 
-          <Stack direction="row" spacing={2} sx={{ mt: '20px' }}>
+          <Stack direction="row" spacing={4} sx={{ mt: '25px' }}>
             {backendIcons &&
               backendIcons.map((icon) => (
                 <Icon key={icon.id} name={icon.name} src={icon.src} />
@@ -44,6 +50,7 @@ export function Skills() {
           </Stack>
         </Box>
       </CustomBox>
+      <Divider/>
     </Container>
   );
 }

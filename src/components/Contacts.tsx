@@ -25,7 +25,7 @@ export function Contacts() {
   }));
 
   return (
-    <Container>
+    <Container id="contacts">
       <CustomBox sx={{ my: 5, padding: 2 }}>
         <Typography variant="h1" sx={{ color: 'rgba(0,199,255,255)' }}>
           Contacts
@@ -47,7 +47,6 @@ export function Contacts() {
             <CustomListItem>salionk223457162@gmail.com</CustomListItem>
           </CustomList>
         </Box>
-
       </CustomBox>
     </Container>
   );

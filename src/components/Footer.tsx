@@ -7,7 +7,7 @@ import DiscordIcon from '../assets/icons/discord.svg';
 
 export function Footer() {
   const CustomFooter = styled(Box)(({ theme }) => ({
-    backgroundColor: '#171718',
+    backgroundColor: 'rgba(0, 10, 31, 255)',
     borderTop: '1px solid #7889A8',
     display: 'flex',
     padding: '30px 0',
