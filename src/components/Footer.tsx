@@ -20,6 +20,7 @@ export function Footer() {
     cursor: 'pointer',
     underline: 'none',
   }));
+
   return (
     <CustomFooter>
       <Container>
@@ -79,12 +80,20 @@ export function Footer() {
               alignItems="flex-start"
               spacing={3}
             >
-              <LinkWithIcon underline="none">
+              <LinkWithIcon
+                href="https://github.com/MsNefskiy"
+                target="_blank"
+                underline="none"
+              >
                 <GitHub color="secondary" sx={{ fontSize: 24, mr: 2 }} />
                 GitHub
               </LinkWithIcon>
 
-              <LinkWithIcon underline="none">
+              <LinkWithIcon
+                href="https://vk.com/eddynashton"
+                target="_blank"
+                underline="none"
+              >
                 <img
                   src={VkIcon}
                   style={{ marginRight: 16 }}
@@ -94,7 +103,11 @@ export function Footer() {
                 VK
               </LinkWithIcon>
 
-              <LinkWithIcon underline="none">
+              <LinkWithIcon
+                href="https://discordapp.com/users/472382706345312266/"
+                target="_blank"
+                underline="none"
+              >
                 <img
                   src={DiscordIcon}
                   style={{ marginRight: 16 }}
