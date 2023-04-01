@@ -8,7 +8,6 @@ import styled from '@mui/material/styles/styled';
 import { Link } from '@mui/material';
 import { ButtonDarkMode } from './ButtonDarkMode';
 
-//rgba(0, 10, 31, 255)
 export function Header() {
   const CustomBox = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -32,8 +31,8 @@ export function Header() {
       display: 'block',
       position: 'absolute',
       height: '2px',
-      width: '100%',
       backgroundColor: '#5C62EC',
+      width: '100%',
       top: '100%',
       left: 0,
     },
@@ -42,7 +41,7 @@ export function Header() {
     <AppBar
       component="nav"
       position="sticky"
-      sx={{ minWidth: '100%', backgroundColor: 'rgba(0, 10, 31, 255)' }}
+      sx={{ minWidth: '100%' }}
     >
       <Container>
         <Toolbar>

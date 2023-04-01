@@ -4,10 +4,11 @@ import { Box, Link, Stack, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import VkIcon from '../assets/icons/vk.svg';
 import DiscordIcon from '../assets/icons/discord.svg';
+import { Colors } from '../theme';
 
 export function Footer() {
   const CustomFooter = styled(Box)(({ theme }) => ({
-    backgroundColor: 'rgba(0, 10, 31, 255)',
+    backgroundColor: Colors['--dark-blue-1'],
     borderTop: '1px solid #7889A8',
     display: 'flex',
     padding: '30px 0',

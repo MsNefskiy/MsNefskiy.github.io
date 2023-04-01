@@ -2,11 +2,12 @@ import styled from '@emotion/styled';
 import { Box, Button, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper/Paper';
 import SpaceImg from '../assets/img/space.jpg';
+import { Colors } from '../theme';
 
 export function Hero() {
   const CustomButton = styled(Button)(({ theme }) => ({
     border: '3px solid transparent',
-    backgroundColor: '#00C7FF',
+    backgroundColor: Colors['--light-cyan'],
     color: 'white',
     width: '20%',
     borderRadius: '25px',
@@ -28,8 +29,13 @@ export function Hero() {
     color: 'white',
   }));
 
+  const CustomSpan = styled(Typography)(({ theme }) => ({
+    color: Colors['--light-cyan'],
+    display: 'inline',
+    fontSize: 'inherit',
+  }));
   return (
-    <CustomPaper id='home'>
+    <CustomPaper id="home">
       <Box
         sx={{
           maxWidth: '1230px',
@@ -42,8 +48,8 @@ export function Hero() {
         }}
       >
         <Box>
-          <Typography sx={{ fontSize: '80px' }} variant="h1">
-            Hello, my name is <span style={{ color: 'rgba(0,199,255,255)' }}>Alexey</span>
+          <Typography sx={{ fontSize: '80px', color: 'white' }} variant="h1">
+            Hello, my name is <CustomSpan>Alexey</CustomSpan>
             <br />
             <span style={{ fontSize: '60px' }}>a frontend developer</span>
           </Typography>
@@ -51,8 +57,8 @@ export function Hero() {
 
         <Box>
           <Typography variant="h3">
-            I enjoy <span style={{ color: 'rgba(0,199,255,255)' }}>building</span> and{' '}
-            <span style={{ color: 'rgba(0,199,255,255)' }}>designing</span> for the web
+            I enjoy <CustomSpan>building</CustomSpan> and{' '}
+            <CustomSpan>designing</CustomSpan> for the web
           </Typography>
         </Box>
 

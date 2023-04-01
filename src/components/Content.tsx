@@ -2,10 +2,15 @@ import styled from '@emotion/styled';
 import { Box, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack/Stack';
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 import { frontendIcons, backendIcons } from '../constants/icons';
+import { Colors } from '../theme';
 import { Icon } from './Icon';
 
 export function Content() {
+  const { mode } = useContext(ThemeContext);
+
   const CustomBox = styled(Box)(({ theme }) => ({
     maxWidth: '1300px',
     display: 'flex',
@@ -24,21 +29,20 @@ export function Content() {
 
   const CustomListItem = styled(Typography)(({ theme }) => ({
     fontSize: 25,
-    color: 'rgba(0,199,255,255)',
   }));
 
   const Divider = styled('div')(({ theme }) => ({
     height: '5px',
-    backgroundColor: '#00C7FF',
+    backgroundColor: `${
+      mode === 'dark' ? Colors['--light-cyan'] : Colors['--light-blue']
+    }`,
     borderRadius: '25px',
   }));
 
   return (
     <Container id="skills">
       <CustomBox sx={{ my: 5, padding: 2 }}>
-        <Typography variant="h1" color="primary">
-          Skills
-        </Typography>
+        <Typography variant="h1">Skills</Typography>
 
         <Box sx={{ mt: '50px' }}>
           <Typography variant="h2">Frontend</Typography>
@@ -62,30 +66,29 @@ export function Content() {
           </Stack>
         </Box>
       </CustomBox>
+
       <Divider />
 
-        <CustomBox sx={{ my: 5, padding: 2 }} id="contacts">
-          <Typography variant="h1" sx={{ color: 'rgba(0,199,255,255)' }}>
-            Contacts
-          </Typography>
+      <CustomBox sx={{ my: 5, padding: 2 }} id="contacts">
+        <Typography variant="h1">Contacts</Typography>
 
-          <Box sx={{ mt: '50px' }}>
-            <CustomList>
-              <Typography variant="h2">Location</Typography>
-              <CustomListItem>Tula, Russia</CustomListItem>
-            </CustomList>
+        <Box sx={{ mt: '50px' }}>
+          <CustomList>
+            <Typography variant="h2">Location</Typography>
+            <CustomListItem color="primary">Tula, Russia</CustomListItem>
+          </CustomList>
 
-            <CustomList>
-              <Typography variant="h2">Telegram</Typography>
-              <CustomListItem>+7 (953) 188-93-27</CustomListItem>
-            </CustomList>
+          <CustomList>
+            <Typography variant="h2">Telegram</Typography>
+            <CustomListItem color="primary">+7 (953) 188-93-27</CustomListItem>
+          </CustomList>
 
-            <CustomList>
-              <Typography variant="h2">Email</Typography>
-              <CustomListItem>salionk223457162@gmail.com</CustomListItem>
-            </CustomList>
-          </Box>
-        </CustomBox>
+          <CustomList>
+            <Typography variant="h2">Email</Typography>
+            <CustomListItem color="primary">salionk223457162@gmail.com</CustomListItem>
+          </CustomList>
+        </Box>
+      </CustomBox>
     </Container>
   );
 }
