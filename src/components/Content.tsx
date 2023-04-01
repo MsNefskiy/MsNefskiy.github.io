@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack/Stack';
 import { frontendIcons, backendIcons } from '../constants/icons';
 import { Icon } from './Icon';
 
-export function Skills() {
+export function Content() {
   const CustomBox = styled(Box)(({ theme }) => ({
     maxWidth: '1300px',
     display: 'flex',
@@ -15,16 +15,28 @@ export function Skills() {
     textAlign: 'center',
   }));
 
-  const Divider = styled('div')(({theme}) => ({
+  const CustomList = styled(Box)(({ theme }) => ({
+    marginBottom: '50px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 15,
+  }));
+
+  const CustomListItem = styled(Typography)(({ theme }) => ({
+    fontSize: 25,
+    color: 'rgba(0,199,255,255)',
+  }));
+
+  const Divider = styled('div')(({ theme }) => ({
     height: '5px',
     backgroundColor: '#00C7FF',
     borderRadius: '25px',
-  }))
+  }));
 
   return (
-    <Container id='skills'>
+    <Container id="skills">
       <CustomBox sx={{ my: 5, padding: 2 }}>
-        <Typography variant="h1" color='primary'>
+        <Typography variant="h1" color="primary">
           Skills
         </Typography>
 
@@ -50,7 +62,30 @@ export function Skills() {
           </Stack>
         </Box>
       </CustomBox>
-      <Divider/>
+      <Divider />
+
+        <CustomBox sx={{ my: 5, padding: 2 }} id="contacts">
+          <Typography variant="h1" sx={{ color: 'rgba(0,199,255,255)' }}>
+            Contacts
+          </Typography>
+
+          <Box sx={{ mt: '50px' }}>
+            <CustomList>
+              <Typography variant="h2">Location</Typography>
+              <CustomListItem>Tula, Russia</CustomListItem>
+            </CustomList>
+
+            <CustomList>
+              <Typography variant="h2">Telegram</Typography>
+              <CustomListItem>+7 (953) 188-93-27</CustomListItem>
+            </CustomList>
+
+            <CustomList>
+              <Typography variant="h2">Email</Typography>
+              <CustomListItem>salionk223457162@gmail.com</CustomListItem>
+            </CustomList>
+          </Box>
+        </CustomBox>
     </Container>
   );
 }

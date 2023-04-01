@@ -1,11 +1,10 @@
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import createTheme from '@mui/material/styles/createTheme';
-import { Contacts } from './components/Contacts';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { Skills } from './components/Skills';
+import { Content } from './components/Content';
 import { ThemeOptions } from '@mui/material/styles';
 import { createContext, useState } from 'react';
 
@@ -82,8 +81,7 @@ function App() {
           <CssBaseline />
           <Header />
           <Hero />
-          <Skills />
-          <Contacts />
+          <Content />
           <Footer />
         </ThemeProvider>
       </ThemeContext.Provider>
