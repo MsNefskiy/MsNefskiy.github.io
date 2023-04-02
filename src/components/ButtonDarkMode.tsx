@@ -3,27 +3,22 @@ import Sun from '../assets/icons/sun.svg';
 import Moon from '../assets/icons/moon.svg';
 import styled from '@emotion/styled';
 import { Box } from '@mui/system';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { IThemeContext, ThemeContext } from '../App';
 
 export function ButtonDarkMode() {
-  const [selected, setSelected] = useState(false);
-  const { toggleTheme } = useContext<IThemeContext>(ThemeContext);
+  const { mode, toggleTheme } = useContext<IThemeContext>(ThemeContext);
 
-  useEffect(() => {
-    if (localStorage.getItem('darkMode') === 'dark') {
-      setSelected(true);
-    }
+  const [selected, setSelected] = useState(() => {
+    return mode === 'dark' ? true : false;
   });
 
   const onClickDarkMode = () => {
     setSelected(!selected);
 
     if (!selected) {
-      localStorage.setItem('darkMode', 'dark');
       toggleTheme && toggleTheme();
     } else {
-      localStorage.setItem('darkMode', 'light');
       toggleTheme && toggleTheme();
     }
   };

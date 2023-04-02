@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { Content } from './components/Content';
 import { createContext, useState } from 'react';
 import { darkTheme, lightTheme } from './theme';
+import { useLocalStorage } from './utils/useLocalStorage';
 
 export interface IThemeContext {
   mode: string;
@@ -13,13 +14,13 @@ export interface IThemeContext {
 }
 
 const defaultState = {
-  mode: localStorage.getItem('darkMode') || 'light',
+  mode: 'light',
 };
 
 export const ThemeContext = createContext<IThemeContext>(defaultState);
 
 function App() {
-  const [mode, setMode] = useState(localStorage.getItem('darkMode') || 'light');
+  const [mode, setMode] = useLocalStorage('darkMode', 'light');
 
   const toggleTheme = () => {
     setMode(() => (mode === 'dark' ? 'light' : 'dark'));
