@@ -12,7 +12,6 @@ export function ButtonGitHub({link, text}: Props) {
     border: '3px solid transparent',
     backgroundColor: Colors['--light-cyan'],
     color: 'white',
-    width: '20%',
     borderRadius: '25px',
     '&:hover': {
       border: '3px solid white',
