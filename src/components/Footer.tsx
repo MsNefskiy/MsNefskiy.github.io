@@ -5,6 +5,7 @@ import { Container } from '@mui/system';
 import VkIcon from '../assets/icons/vk.svg';
 import DiscordIcon from '../assets/icons/discord.svg';
 import { Colors } from '../theme';
+import { scrollTo, toScroll } from '../utils/toScroll';
 
 export function Footer() {
   const CustomFooter = styled(Box)(({ theme }) => ({
@@ -50,13 +51,25 @@ export function Footer() {
               alignItems="flex-start"
               spacing={3}
             >
-              <Link href="#home" underline="none">
+              <Link
+                href="#home"
+                underline="none"
+                onClick={(event) => toScroll(event, scrollTo.HOME)}
+              >
                 Home
               </Link>
-              <Link href="#skills" underline="none">
+              <Link
+                href="#skills"
+                underline="none"
+                onClick={(event) => toScroll(event, scrollTo.SKILLS)}
+              >
                 Skills
               </Link>
-              <Link href="#contacts" underline="none">
+              <Link
+                href="#contacts"
+                underline="none"
+                onClick={(event) => toScroll(event, scrollTo.CONTACTS)}
+              >
                 Contacts
               </Link>
             </Stack>

@@ -7,6 +7,7 @@ import Container from '@mui/material/Container/Container';
 import styled from '@mui/material/styles/styled';
 import { Link } from '@mui/material';
 import { ButtonDarkMode } from './ButtonDarkMode';
+import { scrollTo, toScroll } from '../utils/toScroll';
 
 export function Header() {
   const CustomBox = styled(Box)(({ theme }) => ({
@@ -38,11 +39,7 @@ export function Header() {
     },
   }));
   return (
-    <AppBar
-      component="nav"
-      position="sticky"
-      sx={{ minWidth: '100%' }}
-    >
+    <AppBar component="nav" position="sticky" sx={{ minWidth: '100%' }}>
       <Container>
         <Toolbar>
           <CustomIcon>
@@ -51,19 +48,27 @@ export function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             My site
           </Typography>
-          <CustomBox >
+          <CustomBox>
             <LinkBox>
-              <Link href="#home" underline="none">
+              <Link href="#home" underline="none" onClick={(event) => toScroll(event, scrollTo.HOME)}>
                 Home
               </Link>
             </LinkBox>
             <LinkBox>
-              <Link href="#skills" underline="none">
+              <Link
+                href="#skills"
+                underline="none"
+                onClick={(event) => toScroll(event, scrollTo.SKILLS)}
+              >
                 Skills
               </Link>
             </LinkBox>
             <LinkBox>
-              <Link href="#contacts" underline="none">
+              <Link
+                href="#contacts"
+                underline="none"
+                onClick={(event) => toScroll(event, scrollTo.CONTACTS)}
+              >
                 Contacts
               </Link>
             </LinkBox>
