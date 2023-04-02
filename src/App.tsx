@@ -7,6 +7,7 @@ import { Content } from './components/Content';
 import { createContext, useState } from 'react';
 import { darkTheme, lightTheme } from './theme';
 import { useLocalStorage } from './utils/useLocalStorage';
+import { detectDarkMode } from './utils/detectDarkMode';
 
 export interface IThemeContext {
   mode: string;
@@ -20,7 +21,7 @@ const defaultState = {
 export const ThemeContext = createContext<IThemeContext>(defaultState);
 
 function App() {
-  const [mode, setMode] = useLocalStorage('darkMode', 'light');
+  const [mode, setMode] = useLocalStorage('darkMode', detectDarkMode());
 
   const toggleTheme = () => {
     setMode(() => (mode === 'dark' ? 'light' : 'dark'));
