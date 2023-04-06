@@ -1,13 +1,19 @@
 import styled from '@emotion/styled';
-import { Button } from '@mui/material';
+import { Button, ButtonProps } from '@mui/material';
 import { Colors } from '../theme';
 
-interface Props {
-    link: string
-    text: string
+export interface IButtonProps extends ButtonProps {
+  link: string;
+  label: string;
 }
 
-export function ButtonGitHub({link, text}: Props) {
+// Only include variant, size, and color
+type ButtonBaseProps = Pick<IButtonProps, "variant" | "size" | "link" | "label">;
+// Use all except disableRipple
+// type ButtonBaseProps = Omit<MuiButtonProps, "disableRipple">;
+
+
+export function ButtonGitHub({ link, label, ...rest }: ButtonBaseProps) {
   const CustomButton = styled(Button)(({ theme }) => ({
     border: '3px solid transparent',
     backgroundColor: Colors['--light-cyan'],
@@ -24,9 +30,9 @@ export function ButtonGitHub({link, text}: Props) {
   }));
 
   return (
-    <CustomButton>
+    <CustomButton {...rest}>
       <a href={link} target="_blank">
-        {text}
+        {label}
       </a>
     </CustomButton>
   );
