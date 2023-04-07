@@ -8,7 +8,7 @@ export interface IButtonProps extends ButtonProps {
 }
 
 // Only include variant, size, and color
-type ButtonBaseProps = Pick<IButtonProps, "variant" | "size" | "link" | "label">;
+export type ButtonBaseProps = Pick<IButtonProps, "variant" | "size" | "link" | "label">;
 // Use all except disableRipple
 // type ButtonBaseProps = Omit<MuiButtonProps, "disableRipple">;
 

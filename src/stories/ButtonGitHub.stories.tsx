@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonGitHub } from '../components/ButtonGitHub';
+import { ButtonBaseProps, ButtonGitHub } from '../components/ButtonGitHub';
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
 const meta = {
@@ -18,7 +18,7 @@ export const Example: Story = {
     link: '',
   },
 
-  render: (args) => (<ButtonGitHub {...args} />),
+  render: (args: ButtonBaseProps) => <ButtonGitHub {...args} />,
 };
 
 // export const Secondary: Story = {
