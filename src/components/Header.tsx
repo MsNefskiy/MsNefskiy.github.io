@@ -16,6 +16,29 @@ export function Header() {
     justifyContent: 'center',
     gap: '2rem',
     fontWeight: 500,
+    [theme.breakpoints.down('mobile')]: {
+      marginBottom: '1rem',
+    },
+  }));
+
+  const CustomToolbar = styled(Toolbar)(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    flexWrap: 'wrap',
+    [theme.breakpoints.down('mobile')]: {
+      justifyContent: 'center',
+      rowGap: '1rem',
+    },
+  }));
+
+  const LogoBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    marginRight: 'auto',
+    [theme.breakpoints.down('mobile')]: {
+      paddingTop: '1rem',
+    },
   }));
 
   const CustomIcon = styled(Box)(({ theme }) => ({
@@ -38,19 +61,41 @@ export function Header() {
       left: 0,
     },
   }));
+
+  const ButtonDarkModeBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    order: 1,
+    marginLeft: '30px',
+    [theme.breakpoints.down('mobile')]: {
+      order: 0,
+      paddingTop: '1rem',
+    },
+  }));
+
   return (
-    <AppBar component="nav" position="sticky" sx={{ minWidth: '100%' }}>
+    <AppBar component="nav" position="sticky">
       <Container>
-        <Toolbar>
-          <CustomIcon>
-            <img src={ReactIcon} height="30px" width="40px" />
-          </CustomIcon>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My site
-          </Typography>
+        <CustomToolbar>
+          <LogoBox>
+            <CustomIcon>
+              <img src={ReactIcon} height="30px" width="40px" />
+            </CustomIcon>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              My site
+            </Typography>
+          </LogoBox>
+
+          <ButtonDarkModeBox>
+            <ButtonDarkMode />
+          </ButtonDarkModeBox>
+
           <CustomBox>
             <LinkBox>
-              <Link href="#home" underline="none" onClick={(event) => toScroll(event, scrollTo.HOME)}>
+              <Link
+                href="#home"
+                underline="none"
+                onClick={(event) => toScroll(event, scrollTo.HOME)}
+              >
                 Home
               </Link>
             </LinkBox>
@@ -72,9 +117,8 @@ export function Header() {
                 Contacts
               </Link>
             </LinkBox>
-            <ButtonDarkMode />
           </CustomBox>
-        </Toolbar>
+        </CustomToolbar>
       </Container>
     </AppBar>
   );
