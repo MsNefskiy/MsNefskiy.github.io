@@ -1,5 +1,12 @@
 import createTheme from "@mui/material/styles/createTheme";
 
+declare module '@mui/material/styles' {
+    interface BreakpointOverrides {
+        mobile: true;
+    }
+}
+
+
 export enum Colors {
     '--light-cyan' = 'rgba(0,199,255,255)',
     '--light-blue' = '#0057bb',
@@ -36,6 +43,17 @@ export const darkTheme = createTheme({
         },
 
     },
+
+    breakpoints: {
+        values: {
+            mobile: 470,
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1536,
+        }
+    }
 });
 
 export const lightTheme = createTheme({
@@ -70,4 +88,16 @@ export const lightTheme = createTheme({
             },
         },
     },
+
+    breakpoints: {
+        values: {
+            mobile: 470,
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1536,
+        }
+    }
+
 });
