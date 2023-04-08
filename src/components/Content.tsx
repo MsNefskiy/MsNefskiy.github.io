@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack/Stack';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import { frontendIcons, backendIcons } from '../constants/icons';
@@ -18,6 +17,7 @@ export function Content() {
     alignItems: 'center',
     flexDirection: 'column',
     textAlign: 'center',
+    padding: '0 50px',
   }));
 
   const CustomList = styled(Box)(({ theme }) => ({
@@ -40,30 +40,38 @@ export function Content() {
   }));
 
   return (
-    <Container id="skills">
+    <Container id="skills" sx={{ padding: '0px 15px' }}>
       <CustomBox sx={{ my: 5, padding: 2 }}>
         <Typography variant="h1">Skills</Typography>
 
         <Box sx={{ mt: '50px' }}>
           <Typography variant="h2">Frontend</Typography>
 
-          <Stack direction="row" spacing={4} sx={{ mt: '25px' }}>
-            {frontendIcons &&
-              frontendIcons.map((icon) => (
-                <Icon key={icon.id} name={icon.name} src={icon.src} />
-              ))}
-          </Stack>
+          <Grid sx={{ flexGrow: 1, mt: '25px' }} container>
+            <Grid container justifyContent="center" spacing={3}>
+              {frontendIcons &&
+                frontendIcons.map((icon) => (
+                  <Grid item key={icon.id}>
+                    <Icon key={icon.id} name={icon.name} src={icon.src} />
+                  </Grid>
+                ))}
+            </Grid>
+          </Grid>
         </Box>
 
-        <Box sx={{ mt: '50px' }}>
+        <Box sx={{ mt: '25px' }}>
           <Typography variant="h2">Backend</Typography>
 
-          <Stack direction="row" spacing={4} sx={{ mt: '25px' }}>
-            {backendIcons &&
-              backendIcons.map((icon) => (
-                <Icon key={icon.id} name={icon.name} src={icon.src} />
-              ))}
-          </Stack>
+          <Grid sx={{ flexGrow: 1, mt: '25px' }} container>
+            <Grid container justifyContent="center" spacing={3}>
+              {backendIcons &&
+                backendIcons.map((icon) => (
+                  <Grid item key={icon.id}>
+                    <Icon key={icon.id} name={icon.name} src={icon.src} />
+                  </Grid>
+                ))}
+            </Grid>
+          </Grid>
         </Box>
       </CustomBox>
 
